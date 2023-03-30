@@ -1,0 +1,13 @@
+.h1 {
+  font-family: fantasy;
+  font-weight: 900;
+  text-align: center;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.padding {
+  padding: 30px;
+}
