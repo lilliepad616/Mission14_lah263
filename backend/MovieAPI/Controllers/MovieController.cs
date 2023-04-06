@@ -17,7 +17,8 @@ namespace MovieAPI.Controllers
         public IEnumerable<Movie> Get()
         {
             var x = context.Movies
-                .When(m => m.Edited )
+                .Where(m => m.Edited == "Yes" )
+                .OrderBy(m => m.Title)
                 .ToArray();
 
             return x;

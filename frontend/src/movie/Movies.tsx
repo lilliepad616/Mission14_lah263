@@ -8,21 +8,22 @@ const mds = data.MovieData;
 function MovieList() {
   const [movieData, setMovieData] = useState<Movie[]>([]);
 
+  //helps to access the data
   useEffect(() => {
-    const fetchFood = async () => {
+    const fetchMovie = async () => {
       const rsp = await fetch('https://localhost:4000/movie');
       const temp = await rsp.json();
       setMovieData(temp);
     };
 
-    fetchFood();
+    fetchMovie();
   }, []);
 
   return (
     <>
       <br />
       <div>
-        <h1>Joel Hilton's Movie Collection</h1>
+        <center><h1>Joel Hilton's Movie Collection</h1></center>
       </div>
       <div>
         <table className="table table-bordered">
@@ -34,17 +35,21 @@ function MovieList() {
               <th>Rating</th>
               <th>Category</th>
               <th>Edited</th>
+              <th>Lent To</th>
+              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
-            {mds.map((m) => (
+            {movieData.map((m) => (
               <tr>
-                <td>{m.Title}</td>
-                <td>{m.Year}</td>
-                <td>{m.Director}</td>
-                <td>{m.Rating}</td>
-                <td>{m.Category}</td>
-                <td>{m.Edited}</td>
+                <td>{m.title}</td>
+                <td>{m.year}</td>
+                <td>{m.director}</td>
+                <td>{m.rating}</td>
+                <td>{m.category}</td>
+                <td>{m.edited}</td>
+                <td>{m.lentTo}</td>
+                <td>{m.notes}</td>
               </tr>
             ))}
           </tbody>

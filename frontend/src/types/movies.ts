@@ -1,11 +1,12 @@
+//make sure to have lowercase so that it passes through
 export type Movie = {
-    MovieId: number;
-    Category: string;
-    Title: string;
-    Year: number;
-    Director: string;
-    Rating: string;
-    Edited: string;
-    LentTo: string;
-    Notes: string;
+    movieId: number;
+    category: string;
+    title: string;
+    year: number;
+    director: string;
+    rating: string;
+    edited: string;
+    lentTo: string;
+    notes: string;
   };
